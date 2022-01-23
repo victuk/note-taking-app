@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Divider, Input } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Provider, useSelector } from 'react-redux';
-import store from '../store/editstate';
 import Layout from '../components/layouts/DefaultLayout';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import React, { useState, useEffect, createContext, useReducer } from 'react';
+import {counterReducer, initialstate} from '../../store/notestore';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { TextArea } = Input;
 
+export const Notescontext = createContext();
 
 export default function RecipeReviewCard() {
+
+  let [edit, setEdit] = useState(false);
+  const [state, dispatch] = useContext(Notescontext);
 
   const storeValues = (state) => {
     return state.value.map(v => <div>{v.clickedBall} {v.amount}</div>);
@@ -96,10 +99,10 @@ export default function RecipeReviewCard() {
 
 RecipeReviewCard.getLayout = function getLayout(page) {
   return (
-    <Provider store={store}>
+    <Notescontext.Provider value={{state, dispatch}}>
     <Layout>
       {page}
     </Layout>
-    </Provider>
+    </Notescontext.Provider>
   )
 }
