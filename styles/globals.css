@@ -1,0 +1,34 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.show-on-desktop {
+  display: block;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  .show-on-desktop {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: block;
+  }
+}

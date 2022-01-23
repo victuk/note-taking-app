@@ -1,0 +1,7 @@
+GET https://dummyapi.io/data/v1/post
+Content-Type: application/json
+app-id: 61d32db43ab12ee7c4b0661a
+
+{
+
+}
