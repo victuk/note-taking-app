@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: victorukok.netlify.app
+Token: 5877e1f2c161f9ee8ce91d5d6c3fd18014533137442295aff1b7b7d98878313d
